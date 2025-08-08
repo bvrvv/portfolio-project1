@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baraa Wael</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baraa | Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Hello, I'm Baraa 👋</h1>
-    <p>Computer Science student and aspiring front-end developer.</p>
-    <h3>My Skills:</h3>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-    <a href="https://github.com/" target="_blank">Visit my GitHub</a>
-  </div>
+
+  <header>
+    <img src="bvrvvlogo.jpg" alt="Baraa Logo" class="logo" />
+    <h1>Baraa | Web Developer</h1>
+    <nav>
+      <a class="tab-link active" data-tab="about">About Me</a>
+      <a class="tab-link" data-tab="projects">Projects</a>
+      <a class="tab-link" data-tab="contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="active">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate front-end developer focused on crafting visually appealing, user-friendly websites using HTML, CSS, and JavaScript.
+      I study Computer Science at UoPeople and aim to become a professional freelancer. I’m currently building projects to expand my skills and GitHub portfolio.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Coming soon...</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-link');
+    const sections = document.querySelectorAll('section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        sections.forEach(section => section.classList.remove('active'));
+        const selected = tab.getAttribute('data-tab');
+        document.getElementById(selected).classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
